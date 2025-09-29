@@ -84,6 +84,30 @@ data.content   // the quote text
 data.author    // the author
 */
 
+const t3Button = document.getElementById("t3-loadQuote");
+if (t3Button) {
+    t3Button.addEventListener("click", function () {
+        fetch("https://dummyjson.com/quotes/random").then(function (response) {
+            if (!response.ok) {
+                throw new Error("HTTP " + response.status);
+            }
+            return response.json();
+        })
+        .then(function (data) {
+            if (data && data.quote && data.author) {
+                const quote = document.getElementById("t3-quote");
+                const author = document.getElementById("t3-author");
+                if (quote && author) {
+                    quote.innerHTML = data.quote;
+                    author.innerHTML = data.author;
+                }
+            }
+        })
+        .catch(function (err) {
+            throw new Error("HTTP " + err);
+        });
+    });
+}
 
 /*  
 =======================================
