@@ -47,6 +47,15 @@ button.addEventListener("click", function () {
 });
 */
 
+const t2Button = document.getElementById("t2-btn");
+if (t2Button) {
+    t2Button.addEventListener("click", function () {
+        const t2Status = document.getElementById("t2-status");
+        if (t2Status) {
+            t2Status.innerHTML = "You clicked the button!";
+        }
+    });
+}
 
 /*  
 =======================================
