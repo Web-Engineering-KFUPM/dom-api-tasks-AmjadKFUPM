@@ -19,7 +19,13 @@ inside the <p> element with id="t1-msg".
 💡 Hint:
 document.getElementById("t1-msg").innerHTML = "Hello, World!";
 */
- 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const t1Msg = document.getElementById("t1-msg");
+    if (t1Msg) {
+        t1Msg.innerHTML = "Hello, World!";
+    }
+});
 
 /*  
 =======================================
@@ -40,7 +46,7 @@ button.addEventListener("click", function () {
     // change text here
 });
 */
- 
+
 
 /*  
 =======================================
@@ -68,7 +74,7 @@ Use:
 data.content   // the quote text
 data.author    // the author
 */
- 
+
 
 /*  
 =======================================
